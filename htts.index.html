@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mônica & João</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff8f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #c59fc9;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem;
+    }
+    h2 {
+      color: #8b5e8e;
+    }
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 100%;
+      margin: 1rem 0;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #8b5e8e;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .hidden { display: none; }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mônica & João</h1>
+    <p>12 de Julho de 2025 às 10h - Capela São Cristóvão, Branápolis</p>
+  </header>  <section>
+    <h2>Seja bem-vindo!</h2>
+    <p>Estamos felizes em compartilhar esse momento com você. Por favor, confirme sua presença abaixo.</p><label for="nome">Digite seu nome completo:</label>
+<input type="text" id="nome" placeholder="Ex: Maria Aparecida" />
+<button onclick="confirmarPresenca()">Confirmar Presença</button>
+
+<p id="resposta" class="hidden"></p>
+
+  </section>  <section>
+    <h2>Local da cerimônia</h2>
+    <p>Capela São Cristóvão - Branápolis</p><h2>Local da festa</h2>
+<p>Chácara Recanto dos Guerreiros</p>
+
+  </section>  <script>
+    const listaConvidados = [
+      "Nubia", "Carlos", "Karla", "Mariana", "Luiza",
+      "Luciano", "Luciene", "William", "Wislley",
+      "Luana", "Lucas",
+      "Keyla", "Daniel", "Karla Luiza", "Paulo Henrique",
+      "Larissa", "Wanderson", "Gustavo", "Guilherme", "Gleyson",
+      "Selma", "Nislene", "Douglas", "Wellington", "Flávia",
+      "Verônica", "Sivaldo", "Maria Cecília", "Davi Miguel", "Heloísa", "Thiago",
+      "Edilson", "Alice",
+      "Rayssa", "Fran", "Fernando", "Gabriela",
+      "Augusto", "Kelly", "Ana",
+      "Maria Raimunda", "Emerson",
+      "Maycon", "Lena", "Alex",
+      "Cleia", "Guilherme",
+      "Mara", "Renan",
+      "Mário", "Aline", "Arthur",
+      "Aline Macedo",
+      "Jediane", "Marcelo", "Anna Clara", "Jennifer",
+      "Yago", "André",
+      "Gilmar", "Luciana", "Cássio", "João Pedro",
+      "Diego",
+      "Dheyvid", "Adriano",
+      "Rayane", "Rafael", "Geny", "Caroline",
+      "Maria", "Fábio",
+      "Vanilda", "João", "Adã", "Josiete", "Luziene",
+      "Cida", "Ricardo", "Luciane",
+      "Rhavylla", "Edvaldo", "Theo", "Noah",
+      "Zilmar", "Carmelita", "Wellington",
+      "Gilvan", "Silvia", "Roberta", "Fernando",
+      "Ismael", "Daiane",
+      "Juscelino", "Letícia", "Celma", "kamile", "victor",
+      "Isabel", "Wanio", "Josyane", "Matheus", "Johnny", "Fernanda",
+      "Fábio", "Leonardo",
+      "Francineide", "Samara", "Gilmara",
+      "Nena", "Arival", "Pedro", "Eduarda", "Gabriel",
+      "Jéssica",
+      "Ana Paula", "Fabiano", "David", "Gabriely",
+      "Diasis",
+      "Divina", "Chico", "Vitória", "Tamires", "Miguel", "Agatha", "Laís", "Marcelo",
+      "Anderson", "João Guilherme", "Matheus", "Cecília",
+      "Rosimar", "Arthur", "Luana", "Letícia", "Alexandre",
+      "Cleusimar", "Gabriel", "Rafael", "Kamila",
+      "Fátima", "Hilda", "Andrelino",
+      "Fernanda", "Thiago Fernando", "Brenda", "Rafael",
+      "Flávia", "Vagner", "Lavinia", "Lívia",
+      "Lisandro", "Agliene",
+      "Luiz Fernando", "Carlos Eduardo", "Yasmin", "Ivone", "Luiz Carlos",
+      "Delsina", "Bastião",
+      "Maria Eduarda", "Junior"
+    ];
+
+    function confirmarPresenca() {
+      const nome = document.getElementById("nome").value.trim();
+      const resposta = document.getElementById("resposta");
+      resposta.classList.remove("hidden", "success", "error");
+
+      const nomeEncontrado = listaConvidados.some(convidado => nome.toLowerCase().includes(convidado.toLowerCase()));
+
+      if (nomeEncontrado) {
+        resposta.textContent = "Presença confirmada com sucesso! Estamos ansiosos por você.";
+        resposta.classList.add("success");
+      } else {
+        resposta.textContent = "Nome não encontrado na lista. Por favor, entre em contato com os noivos.";
+        resposta.classList.add("error");
+      }
+    }
+  </script></body>
+</html>
